@@ -1,7 +1,8 @@
 
 <!-- ```markdown -->
 
-### By ![Logo](assets/icons/logo_light.png) flutter.spirit
+### By <img src="assets/icons/logo_light.png" alt="Home Screen" width="300" height="200">
+ flutter.spirit
 # Trip Planner 🌍✈️
 s
 Welcome to **Trip Planner**, a Flutter-based application designed to make your travel planning experience seamless and enjoyable. This app not only simplifies the process of planning trips but also provides a delightful user interface with **awesome Flutter animations** and **smooth transitions**.
