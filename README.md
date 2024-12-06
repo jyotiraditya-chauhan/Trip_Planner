@@ -1,4 +1,3 @@
-Here's the README.md file content in Markdown format for your GitHub repository:
 
 ```markdown
 # Trip Planner 🌍✈️
