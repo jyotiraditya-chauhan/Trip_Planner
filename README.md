@@ -1,7 +1,7 @@
 
 ```markdown
 # Trip Planner 🌍✈️
-
+s
 Welcome to **Trip Planner**, a Flutter-based application designed to make your travel planning experience seamless and enjoyable. This app not only simplifies the process of planning trips but also provides a delightful user interface with **awesome Flutter animations** and **smooth transitions**.
 
 ## Features 🚀
@@ -28,7 +28,8 @@ Welcome to **Trip Planner**, a Flutter-based application designed to make your t
 ### Installation
 
 1. Clone the repository:
-   ```bash
+
+```shellscript
    git clone https://github.com/yourusername/trip_planner.git
 ```
 

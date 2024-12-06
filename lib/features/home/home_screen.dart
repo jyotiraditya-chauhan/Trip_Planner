@@ -48,11 +48,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   Container(
                     height: 60,
                     width: 60,
+                    clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
-                        color: Colors.cyan,
+                        color: Colors.transparent,
                         shape: BoxShape.circle,
                         border:
                             Border.all(color: Colors.grey.withOpacity(0.3))),
+                    child: Image.asset(
+                      "assets/images/profile.avif",
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ],
               ),
