@@ -1,5 +1,7 @@
 
 <!-- ```markdown -->
+
+### By ![Logo](assets/icons/logo_light.png) flutter.spirit
 # Trip Planner 🌍✈️
 s
 Welcome to **Trip Planner**, a Flutter-based application designed to make your travel planning experience seamless and enjoyable. This app not only simplifies the process of planning trips but also provides a delightful user interface with **awesome Flutter animations** and **smooth transitions**.
@@ -60,7 +62,7 @@ flutter run
 
 | Feature | Preview
 |-----|-----
-| **Home Screen** | *(![Home Screen](assets/images/home_screen.png))*
+| **Home Screen** | *![Home Screen](assets/images/home_screen.png)*
 | **Trip Planner UI** | *(Insert Screenshot Here)*
 | **Smooth Animations** | *(Insert Screenshot Here)*
 
