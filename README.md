@@ -60,7 +60,7 @@ flutter run
 
 | Feature | Preview
 |-----|-----
-| **Home Screen** | *(Insert Screenshot Here)*
+| **Home Screen** | *(![Home Screen](assets/images/home_screen.png))*
 | **Trip Planner UI** | *(Insert Screenshot Here)*
 | **Smooth Animations** | *(Insert Screenshot Here)*
 
