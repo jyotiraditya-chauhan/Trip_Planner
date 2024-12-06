@@ -29,7 +29,7 @@ Welcome to **Trip Planner**, a Flutter-based application designed to make your t
 
 1. Clone the repository:
 
-```shellscript
+```bash
 git clone https://github.com/yourusername/trip_planner.git
 ```
 
