@@ -40,6 +40,7 @@ dependencies:
   hugeicons: ^0.0.7
   google_fonts: ^6.2.1
   lottie: ^3.1.3
+  siri_wave: ^2.2.0
 
 dev_dependencies:
   flutter_test:
