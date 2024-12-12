@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
-import 'package:trip_planner/features/common/color/app_color.dart';
+import 'package:trip_planner/common/color/app_color.dart';
 
 class CircleScaleButton extends StatefulWidget {
   final VoidCallback? onTap;

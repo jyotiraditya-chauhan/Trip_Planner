@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:siri_wave/siri_wave.dart';
 
-import 'package:trip_planner/features/common/export.dart';
+import 'package:trip_planner/common/export.dart';
+import 'package:trip_planner/features/booking/booking_screen.dart';
 import 'package:trip_planner/features/home/widgets/background_painter.dart';
 import 'package:trip_planner/features/home/widgets/circuler_button.dart';
 import 'package:trip_planner/features/home/widgets/flight_card.dart';
@@ -25,12 +25,6 @@ class _HomeScreenState extends State<HomeScreen> {
     {"icon": HugeIcons.strokeRoundedBuilding04, "onTap": () {}},
     {"icon": Iconsax.people, "onTap": () {}},
   ];
-  final controller = IOS9SiriWaveformController(
-      amplitude: 0.5,
-      color1: Colors.red,
-      color2: Colors.blue,
-      color3: Colors.black,
-      speed: 0.5);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -143,11 +137,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               spacer20,
-              const FlightCard(),
-              SiriWaveform.ios9(
-                controller: controller,
-                options: const IOS9SiriWaveformOptions(height: 40, width: 400),
-              ),
+              GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (context) => const BookingScreen(),
+                        ));
+                  },
+                  child: const FlightCard()),
               SizedBox(
                 height: MediaQuery.paddingOf(context).bottom + 20,
               ),

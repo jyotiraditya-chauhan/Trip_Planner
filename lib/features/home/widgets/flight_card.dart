@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:trip_planner/features/common/color/app_color.dart';
-import 'package:trip_planner/features/common/constant/app_constant.dart';
+import 'package:trip_planner/common/color/app_color.dart';
+import 'package:trip_planner/common/constant/app_constant.dart';
 
 class FlightCard extends StatefulWidget {
   const FlightCard({super.key});

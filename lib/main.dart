@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trip_planner/features/home/home_screen.dart';
-import 'package:trip_planner/features/routes/routes.dart';
+import 'package:trip_planner/routes/routes.dart';
 
 void main() {
   runApp(const MainApp());
