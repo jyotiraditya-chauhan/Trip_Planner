@@ -14,6 +14,16 @@ class BookingScreen extends StatefulWidget {
 
 class _BookingScreenState extends State<BookingScreen> {
   int selectedRadio = 1;
+  final TextEditingController _toController = TextEditingController();
+  final TextEditingController _fromController = TextEditingController();
+
+  @override
+  void initState() {
+    _toController.text = 'New Delhi, IN';
+    _fromController.text = "Toronto, CA";
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +70,7 @@ class _BookingScreenState extends State<BookingScreen> {
             ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 12),
-              height: 380,
+              height: 400,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40),
                 color: const Color(0xFF1D2229),
@@ -125,25 +135,53 @@ class _BookingScreenState extends State<BookingScreen> {
                           const SizedBox(
                             width: 20,
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("From",
-                                  style: GoogleFonts.raleway(
-                                    textStyle: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12,
-                                        color: AppColor.cyan),
-                                  )),
-                              Text("New Delhi, IN",
-                                  style: GoogleFonts.raleway(
-                                    textStyle: const TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14,
-                                        color: Colors.white54),
-                                  )),
-                            ],
-                          )
+                          Expanded(
+                            child: TextFormField(
+                              controller: _toController,
+                              style: GoogleFonts.raleway(
+                                textStyle: const TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                    color: Colors.white54),
+                              ),
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: "New Delhi, IN",
+                                hintStyle: GoogleFonts.raleway(
+                                  textStyle: const TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      color: Colors.white54),
+                                ),
+                                label: Text("From",
+                                    style: GoogleFonts.raleway(
+                                      textStyle: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14,
+                                          color: AppColor.cyan),
+                                    )),
+                              ),
+                            ),
+                          ),
+                          // Column(
+                          //   crossAxisAlignment: CrossAxisAlignment.start,
+                          //   children: [
+                          //     Text("From",
+                          // style: GoogleFonts.raleway(
+                          //   textStyle: TextStyle(
+                          //       fontWeight: FontWeight.bold,
+                          //       fontSize: 12,
+                          //       color: AppColor.cyan),
+                          // )),
+                          // Text("New Delhi, IN",
+                          //     style: GoogleFonts.raleway(
+                          //       textStyle: const TextStyle(
+                          //           fontWeight: FontWeight.w400,
+                          //           fontSize: 14,
+                          //           color: Colors.white54),
+                          //     )),
+                          //   ],
+                          // )
                         ],
                       ),
                     ),
@@ -174,14 +212,23 @@ class _BookingScreenState extends State<BookingScreen> {
                         const SizedBox(
                           width: 10,
                         ),
-                        Container(
-                            height: 40,
-                            width: 40,
-                            decoration: const BoxDecoration(
-                                shape: BoxShape.circle, color: Colors.white),
-                            child: const HugeIcon(
-                                icon: HugeIcons.strokeRoundedExchange01,
-                                color: Colors.black)),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              String temp = _toController.text;
+                              _toController.text = _fromController.text;
+                              _fromController.text = temp;
+                            });
+                          },
+                          child: Container(
+                              height: 40,
+                              width: 40,
+                              decoration: const BoxDecoration(
+                                  shape: BoxShape.circle, color: Colors.white),
+                              child: const HugeIcon(
+                                  icon: HugeIcons.strokeRoundedExchange01,
+                                  color: Colors.black)),
+                        ),
                       ],
                     ),
                     Padding(
@@ -195,25 +242,53 @@ class _BookingScreenState extends State<BookingScreen> {
                           const SizedBox(
                             width: 20,
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("To",
-                                  style: GoogleFonts.raleway(
-                                    textStyle: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12,
-                                        color: AppColor.cyan),
-                                  )),
-                              Text("Toronto, CA",
-                                  style: GoogleFonts.raleway(
-                                    textStyle: const TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14,
-                                        color: Colors.white54),
-                                  )),
-                            ],
-                          )
+                          // Column(
+                          //   crossAxisAlignment: CrossAxisAlignment.start,
+                          //   children: [
+                          //     Text("To",
+                          //         style: GoogleFonts.raleway(
+                          //           textStyle: TextStyle(
+                          //               fontWeight: FontWeight.bold,
+                          //               fontSize: 12,
+                          //               color: AppColor.cyan),
+                          //         )),
+                          //     Text("Toronto, CA",
+                          //         style: GoogleFonts.raleway(
+                          //           textStyle: const TextStyle(
+                          //               fontWeight: FontWeight.w400,
+                          //               fontSize: 14,
+                          //               color: Colors.white54),
+                          //         )),
+                          //   ],
+                          // )
+                          Expanded(
+                            child: TextFormField(
+                              controller: _fromController,
+                              style: GoogleFonts.raleway(
+                                textStyle: const TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                    color: Colors.white54),
+                              ),
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: "Toronto, CA",
+                                hintStyle: GoogleFonts.raleway(
+                                  textStyle: const TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      color: Colors.white54),
+                                ),
+                                label: Text("To",
+                                    style: GoogleFonts.raleway(
+                                      textStyle: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14,
+                                          color: AppColor.cyan),
+                                    )),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -295,7 +370,7 @@ class _BookingScreenState extends State<BookingScreen> {
                           color: AppColor.cyan,
                           borderRadius: BorderRadius.circular(20)),
                       child: Center(
-                        child: Text("Flight Book",
+                        child: Text("Search Flight",
                             style: GoogleFonts.raleway(
                               textStyle: const TextStyle(
                                   fontWeight: FontWeight.w400,
@@ -306,6 +381,158 @@ class _BookingScreenState extends State<BookingScreen> {
                     ),
                   ],
                 ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            //#303439
+            Container(
+              height: 140,
+              margin: const EdgeInsets.symmetric(horizontal: 12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: const Color(0xFF1B2229),
+              ),
+              child: Stack(
+                children: [
+                  Positioned.fill(
+                      child: Image.asset(
+                    "assets/images/map_1.png",
+                    fit: BoxFit.cover,
+                  )),
+                  Positioned(
+                      child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.black12.withOpacity(0.1),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(30))),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 22, vertical: 14),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("1030 PM",
+                                      style: GoogleFonts.raleway(
+                                        textStyle: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14,
+                                            color: Colors.white),
+                                      )),
+                                  Text("DEL",
+                                      style: GoogleFonts.raleway(
+                                        textStyle: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14,
+                                            color: Colors.white54),
+                                      )),
+                                ],
+                              ),
+                              const Spacer(),
+                              Row(
+                                children: [
+                                  HugeIcon(
+                                      icon: HugeIcons.strokeRoundedTarget03,
+                                      size: 14,
+                                      color: AppColor.cyan),
+                                  const SizedBox(
+                                    width: 3,
+                                  ),
+                                  Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: List.generate(
+                                      8,
+                                      (index) {
+                                        return Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 6),
+                                          child: Container(
+                                            height: 2,
+                                            width: 4,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  Colors.white.withOpacity(0.6),
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 3,
+                                  ),
+                                  HugeIcon(
+                                      icon: HugeIcons.strokeRoundedLocation01,
+                                      size: 14,
+                                      color: AppColor.cyan),
+                                ],
+                              ),
+                              const Spacer(),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("1030 PM",
+                                      style: GoogleFonts.raleway(
+                                        textStyle: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14,
+                                            color: Colors.white),
+                                      )),
+                                  Text("XYZ",
+                                      style: GoogleFonts.raleway(
+                                        textStyle: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14,
+                                            color: Colors.white54),
+                                      )),
+                                ],
+                              ),
+                            ],
+                          ),
+                          const Spacer(),
+                          Row(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("2 hr 20 min",
+                                      style: GoogleFonts.raleway(
+                                        textStyle: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                            color: Colors.white),
+                                      )),
+                                  Text("1 Stops",
+                                      style: GoogleFonts.raleway(
+                                        textStyle: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 12,
+                                            color: Colors.white54),
+                                      )),
+                                ],
+                              ),
+                              const Spacer(),
+                              Text("\$300",
+                                  style: GoogleFonts.raleway(
+                                    textStyle: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 32,
+                                        color: Colors.white),
+                                  )),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ))
+                ],
               ),
             ),
           ],
