@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:trip_planner/common/color/app_color.dart';
 import 'package:trip_planner/common/constant/app_constant.dart';
+import 'package:trip_planner/features/home/widgets/clipper.dart';
 
 class FlightCard extends StatefulWidget {
   const FlightCard({super.key});
@@ -15,66 +16,69 @@ class FlightCard extends StatefulWidget {
 class _FlightCardState extends State<FlightCard> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 300,
-      child: Stack(
-        children: [
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            // bottom: -100,
-            child: Container(
-              height: 300,
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.center,
-                    end: Alignment.topLeft,
-                    tileMode: TileMode.clamp,
-                    transform: const GradientRotation(1),
-                    colors: [
-                      // const Color(0xFF17353A).withOpacity(0.8),
-                      // AppColor.cyan.withOpacity(0.3),
-                      // AppColor.cyan.withOpacity(0.1),
-                      // AppColor.cyan.withOpacity(0.3),
-                      // const Color(0xFF17353A).withOpacity(0.3),
-                      const Color(0xFF17353A).withOpacity(0.8),
-                      const Color(0xFF17353A).withOpacity(0.3),
-                      const Color(0xFF17353A).withOpacity(0.8),
-                    ],
-                  ),
-                  color: const Color(0xFF17353A).withOpacity(0.3),
-                  border: Border.all(
-                      color: const Color(0xFF17353A).withOpacity(0.2),
-                      width: 0.5),
-                  // color: Colors.red,
-                  borderRadius: BorderRadius.circular(60)),
-              child: const FlightCardUI(),
+    return ClipPath(
+      clipper: TicketClipper(),
+      child: SizedBox(
+        height: 300,
+        child: Stack(
+          children: [
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              // bottom: -100,
+              child: Container(
+                height: 300,
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.center,
+                      end: Alignment.topLeft,
+                      tileMode: TileMode.clamp,
+                      transform: const GradientRotation(1),
+                      colors: [
+                        // const Color(0xFF17353A).withOpacity(0.8),
+                        // AppColor.cyan.withOpacity(0.3),
+                        // AppColor.cyan.withOpacity(0.1),
+                        // AppColor.cyan.withOpacity(0.3),
+                        // const Color(0xFF17353A).withOpacity(0.3),
+                        const Color(0xFF17353A).withOpacity(0.8),
+                        const Color(0xFF17353A).withOpacity(0.3),
+                        const Color(0xFF17353A).withOpacity(0.8),
+                      ],
+                    ),
+                    color: const Color(0xFF17353A).withOpacity(0.3),
+                    border: Border.all(
+                        color: const Color(0xFF17353A).withOpacity(0.2),
+                        width: 0.5),
+                    // color: Colors.red,
+                    borderRadius: BorderRadius.circular(60)),
+                child: const FlightCardUI(),
+              ),
             ),
-          ),
-          Positioned(
-            bottom: 80,
-            left: -10,
-            child: Container(
-              height: 40,
-              width: 30,
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: AppColor.cyan.withOpacity(0.3)),
+            Positioned(
+              bottom: 80,
+              left: -10,
+              child: Container(
+                height: 40,
+                width: 30,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppColor.cyan.withOpacity(0.3)),
+              ),
             ),
-          ),
-          Positioned(
-            bottom: 80,
-            right: -10,
-            child: Container(
-              height: 40,
-              width: 30,
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: AppColor.cyan.withOpacity(0.3)),
+            Positioned(
+              bottom: 80,
+              right: -10,
+              child: Container(
+                height: 40,
+                width: 30,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppColor.cyan.withOpacity(0.3)),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
